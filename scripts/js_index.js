@@ -1,8 +1,7 @@
-const { getType } = require('../cjs/index')
+const { hello, hey, multiply, pingPong, sum } = require("../cjs/index");
 
-console.log(getType(1))
-console.log(getType('string'))
-console.log(getType(() => null))
-console.log(getType(undefined))
-console.log(getType(null))
-console.log(getType({}))
+hello("World");
+hey("World");
+console.log(sum('A', "B"));
+console.log(multiply(2, 3));
+console.log(pingPong("ping"));
