@@ -1,5 +1,3 @@
-const { sum } = require('../cjs/index')
+const { main } = require('../cjs/index')
 
-const res = sum('B', 'A')
-
-console.log('The result is: ', res)
+main();

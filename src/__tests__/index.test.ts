@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
-import { sum } from "../index";
+import { main } from "../index";
 
-describe("sum", () => {
-  it("should sum two number", () => {
-    expect(sum(1, 3)).toEqual(4);
+describe("main", () => {
+  it("should return undefined", () => {
+    expect(main()).toBeUndefined();
   });
 });

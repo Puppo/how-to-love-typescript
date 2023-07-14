@@ -1,3 +1,3 @@
-export function sum(...args: number[]): number {
-  return args.reduce((acc, curr) => acc + curr, 0);
+export function main(...args: number[]): void {
+  console.log("How to love Typescript!");
 }
