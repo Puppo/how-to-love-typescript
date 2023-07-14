@@ -1,16 +1,13 @@
-export function hello(name: string): void {
-  console.log(`Hello ${name}!`);
+export enum Color {
+  Red,
+  Green,
+  Blue,
 }
 
-export const hey = (name: string): void => {
-  console.log(`Hey ${name}!`);
-};
-
-export function sum(a: number, b: number): number {
-  return a + b;
-}
-
-export const multiply = (a: number, b: number) => a * b;
-
-type PingPong = (ping: "ping") => "pong";
-export const pingPong: PingPong = ping => "pong";
+const COLOR = {
+  Red: "red",
+  Green: "green",
+  Blue: "blue",
+} as const;
+type ColorKeys = keyof typeof COLOR;
+export type Colors = (typeof COLOR)[ColorKeys];
