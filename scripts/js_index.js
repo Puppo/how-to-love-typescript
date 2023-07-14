@@ -1,5 +1,8 @@
-const { sum } = require('../cjs/index')
+const { getType } = require('../cjs/index')
 
-const res = sum('B', 'A')
-
-console.log('The result is: ', res)
+console.log(getType(1))
+console.log(getType('string'))
+console.log(getType(() => null))
+console.log(getType(undefined))
+console.log(getType(null))
+console.log(getType({}))

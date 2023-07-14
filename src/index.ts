@@ -1,20 +1,42 @@
-const a: any = 1;
+type PossibleTypes =
+  | "number"
+  | "string"
+  | "boolean"
+  | "object"
+  | "array"
+  | "symbol"
+  | "null"
+  | "undefined"
+  | "function"
+  | "unknown";
 
-// a.b = 1;
-
-const res = a + 3;
-
-console.log(res);
-
-const b: unknown = 1;
-
-// b.b = 1;
-// 'b' is of type 'unknown'.ts(18046)
-
-// const res2 = b + 3;
-// 'b' is of type 'unknown'.ts(18046)
-
-if (typeof b === "number") {
-  const res3 = b + 3;
-  console.log(res3);
+export function getType(value: unknown): PossibleTypes {
+  if (typeof value === "number") {
+    return "number";
+  }
+  if (typeof value === "string") {
+    return "string";
+  }
+  if (typeof value === "boolean") {
+    return "boolean";
+  }
+  if (typeof value === "object") {
+    if (Array.isArray(value)) {
+      return "array";
+    }
+    if (value === null) {
+      return "null";
+    }
+    return "object";
+  }
+  if (typeof value === "symbol") {
+    return "symbol";
+  }
+  if (typeof value === "undefined") {
+    return "undefined";
+  }
+  if (typeof value === "function") {
+    return "function";
+  }
+  return "unknown";
 }
